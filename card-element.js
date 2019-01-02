@@ -8,22 +8,29 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
  * @polymer
  * @demo demo/index.html
  */
-class CardElement extends PolymerElement {
+ class CardElement extends PolymerElement {
   static get template() {
     return html`
-      <style>
-        :host {
-          display: block;
-        }
-      </style>
-      <h2>Hello [[prop1]]!</h2>
+    <style>
+    :host {
+      display: block;
+    }
+    </style>
+    <div>
+    <h3>[[heading]]</h3>
+    <p>[[text]]</p>
+    </div>
     `;
   }
   static get properties() {
     return {
-      prop1: {
+      heading: {
         type: String,
-        value: 'card-element',
+        value: '',
+      },
+      text: {
+        type: String,
+        value: '',
       },
     };
   }
